@@ -1,0 +1,147 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: #99EDCC; /* Màu xanh lam mint */
+    margin: 0;
+    padding: 10px; /* Thêm khoảng đệm để tránh tràn màn hình trên thiết bị nhỏ */
+    box-sizing: border-box;
+    color: #002147; /* Màu xanh hải quân cho văn bản chính */
+}
+
+#countdown {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+    padding: 20px;
+    border-radius: 15px; /* Bo góc tròn */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau */
+    animation: fadeIn 2s ease-in; /* Hiệu ứng fade-in */
+    width: 90%;
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    box-sizing: border-box;
+    animation: slideIn 1s ease-out;
+    color: #002147; /* Màu xanh hải quân cho văn bản bên trong countdown */
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#timer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Cho phép các ô xuống dòng */
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    margin: 10px; /* Khoảng cách giữa các ô */
+    transition: transform 0.2s, box-shadow 0.2s; /* Hiệu ứng chuyển động */
+    animation: pulse 2s infinite, fadeInUp 1s ease-out;
+    cursor: pointer; /* Con trỏ thay đổi thành pointer khi hover */
+    color: #002147; /* Màu xanh hải quân cho văn bản trong các ô */
+}
+
+.time-box:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.time-box:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.time-box:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.time-box:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.time-box:hover {
+    transform: scale(1.1); /* Phóng to khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
+.time-box:active {
+    transform: scale(1.2); /* Phóng to hơn khi click */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ khi click */
+}
+
+.number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #002147; /* Màu xanh hải quân */
+}
+
+.label {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#about-me {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+    padding: 20px;
+    border-radius: 15px; /* Bo góc tròn */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau */
+    animation: fadeIn 2s ease-in; /* Hiệu ứng fade-in */
+    width: 90%;
+    max-width: 500px; /* Giới hạn chiều rộng tối đa */
+    box-sizing: border-box;
+    margin-top: 20px; /* Khoảng cách giữa Countdown và About Me */
+    color: inherit; /* Kế thừa màu sắc */
+    text-decoration: none; /* Bỏ gạch chân */
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideIn 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+#about-me:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
+/* Media Queries cho các thiết bị nhỏ hơn */
+@media (max-width: 600px) {
+    .time-box {
+        width: 90px;
+        padding: 15px;
+    }
+    .number {
+        font-size: 2em; /* Giảm kích thước font */
+    }
+    .label {
+        font-size: 1em; /* Giảm kích thước font */
+    }
+}
